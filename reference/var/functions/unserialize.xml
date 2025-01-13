@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!-- $Revision$ -->
-<!-- EN-Revision: d75036c386e37ce56dafb7607b72aedc3e33fe09iner: yannick Status: ready -->
+<!-- EN-Revision: d75036c386e37ce56dafb7607b72aedc3e33fe09 Maintainer: yannick Status: ready -->
 <!-- Reviewed: no -->
 <refentry xml:id="function.unserialize" xmlns="http://docbook.org/ns/docbook">
  <refnamediv>
   <refname>unserialize</refname>
   <refpurpose>Crée une variable PHP à partir d'une valeur sérialisée</refpurpose>
  </refnamediv>
- 
+
  <refsect1 role="description">
   &reftitle.description;
   <methodsynopsis>
@@ -21,14 +21,14 @@
   </simpara>
   <warning>
    <para>
-    Ne passez pas d'entrée utilisateur non fiable à la fonction 
-    <function>unserialize</function> quelle que soit la valeur de 
+    Ne passez pas d'entrée utilisateur non fiable à la fonction
+    <function>unserialize</function> quelle que soit la valeur de
     <literal>allowed_classes</literal> dans <parameter>options</parameter>.
     La désérialisation peut résulter
     en une exécution de code chargé et exécuté lors de l'instanciation
     et l'autochargement d'objet, et ainsi, un utilisateur mal intentionné
     peut être capable d'exploiter ce comportement. Utilisez un standard d'échange
-    sûr, comme JSON (via les fonctions <function>json_decode</function> 
+    sûr, comme JSON (via les fonctions <function>json_decode</function>
     et <function>json_encode</function>) si vous devez passer des données sérialisées
     à l'utilisateur.
    </para>
@@ -40,7 +40,7 @@
    </para>
   </warning>
  </refsect1>
- 
+
  <refsect1 role="parameters">
   &reftitle.parameters;
   <para>
@@ -112,9 +112,9 @@
           <entry><type>int</type></entry>
           <entry>
            <simpara>
-            La profondeur maximale autorisée des structures lors de la désérialisation, 
-            qui est destinée à empêcher les débordements de pile. La limite de profondeur 
-            par défaut est de <literal>4096</literal> et peut être désactivée en définissant 
+            La profondeur maximale autorisée des structures lors de la désérialisation,
+            qui est destinée à empêcher les débordements de pile. La limite de profondeur
+            par défaut est de <literal>4096</literal> et peut être désactivée en définissant
             <literal>max_depth</literal> à <literal>0</literal>.
            </simpara>
           </entry>
@@ -127,7 +127,7 @@
    </variablelist>
   </para>
  </refsect1>
- 
+
  <refsect1 role="returnvalues">
   &reftitle.returnvalues;
   <para>
@@ -191,7 +191,7 @@
        <entry>7.4.0</entry>
        <entry>
         Ajout de l'élément <literal>max_depth</literal> aux
-        <parameter>options</parameter> pour définir la profondeur 
+        <parameter>options</parameter> pour définir la profondeur
         maximale autorisée des structures lors de la désérialisation.
        </entry>
       </row>
@@ -210,7 +210,7 @@
    </informaltable>
   </para>
  </refsect1>
- 
+
  <refsect1 role="examples">
   &reftitle.examples;
   <para>
@@ -252,7 +252,7 @@ $serialized_object='O:1:"a":1:{s:5:"value";s:3:"100";}';
 
 ini_set('unserialize_callback_func', 'mycallback');
 
-function mycallback($classname) 
+function mycallback($classname)
 {
     // Incluez simplement un fichier contenant votre définition de classe
     // vous saurez quelle classe grâce à $classname
@@ -263,7 +263,7 @@ function mycallback($classname)
    </example>
   </para>
  </refsect1>
- 
+
  <refsect1 role="notes">
   &reftitle.notes;
   <warning>
